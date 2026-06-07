@@ -10,7 +10,7 @@ const ibmPlexSansThai = IBM_Plex_Sans_Thai({
 
 export const metadata: Metadata = {
   title: "เกมเศรษฐี - Property Analyzer",
-  description: "Real Estate Investment Analysis Web App",
+  description: "เว็บแอปพลิเคชันสำหรับวิเคราะห์การลงทุนอสังหาริมทรัพย์",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${ibmPlexSansThai.variable}`}>
+    <html lang="th" className={`${ibmPlexSansThai.variable}`}>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
