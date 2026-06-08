@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function TopAppBar() {
   return (
     <header className="w-full top-0 sticky bg-surface border-b border-outline-variant z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16">
@@ -5,9 +7,9 @@ export function TopAppBar() {
         <span className="material-symbols-outlined text-primary cursor-pointer">
           menu
         </span>
-        <h1 className="font-headline-md text-headline-md font-semibold text-primary">
+        <Link href="/" className="font-headline-md text-headline-md font-semibold text-primary">
           ROI Matrix
-        </h1>
+        </Link>
       </div>
       <div className="flex items-center gap-4">
         <span className="material-symbols-outlined text-on-surface-variant">
