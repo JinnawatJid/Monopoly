@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -335,14 +336,14 @@ export default function Home() {
       </main>
 
       {/* FAB: Add New Property */}
-      <button className="group fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-on-primary shadow-lg transition-all hover:scale-110 hover:shadow-xl active:scale-90">
+      <Link href="/properties/new" className="group fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-on-primary shadow-lg transition-all hover:scale-110 hover:shadow-xl active:scale-90">
         <span className="material-symbols-outlined text-[28px]" data-icon="add">
           add
         </span>
         <span className="text-label-sm pointer-events-none absolute right-16 whitespace-nowrap rounded bg-on-background px-3 py-1 text-white opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
           เพิ่มทรัพย์สินใหม่
         </span>
-      </button>
+      </Link>
 
       {/* BottomNavBar */}
       <nav className="pb-safe fixed bottom-0 z-50 flex h-20 w-full items-center justify-around rounded-t-[2rem] border-t border-outline-variant bg-surface-container-lowest px-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">

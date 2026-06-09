@@ -1,8 +1,8 @@
 # Project Progress: Property Analyzer ("เกมเศรษฐี")
 
-## Current Phase: Phase 1 - Foundation & Dashboard UI
+## Current Phase: Phase 2 - Core Data Entry UI
 **Status:** In Progress
-**Goal:** Establish the repository structure, define the design system, and implement the initial landing/dashboard interface.
+**Goal:** Implement the multi-step form for adding and editing property details.
 
 ## Milestones
 
@@ -13,9 +13,9 @@
 - [x] **Dashboard UI:** Implemented the initial `page.tsx` based on Stitch's generated HTML.
 - [x] **Repository Organization:** Structured the repository, moving documentation into the `docs/` folder.
 
-### ⏳ Phase 2: Core Data Entry UI (Next Steps)
-- [ ] **Routing Setup:** Create routes for the property addition flow (e.g., `/add-property`).
-- [ ] **Multi-Step Form - Step 1:** General Information & Images UI.
+### ⏳ Phase 2: Core Data Entry UI (In Progress)
+- [x] **Routing Setup:** Create routes for the property addition flow (`/properties/new`).
+- [x] **Multi-Step Form - Step 1:** General Information & Images UI.
 - [ ] **Multi-Step Form - Step 2:** Qualitative Analysis UI.
 - [ ] **Multi-Step Form - Step 3:** Quantitative Analysis UI.
 - [ ] **Multi-Step Form - Step 4:** Summary & Results UI (Scorecard).
