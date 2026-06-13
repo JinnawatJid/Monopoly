@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TopAppBar } from "@/components/layout/TopAppBar";
 import { NavigationDrawer } from "@/components/layout/NavigationDrawer";
 import { BottomNavBar } from "@/components/layout/BottomNavBar";
@@ -261,15 +262,15 @@ export default function AddPropertyStep1() {
                   >
                     บันทึกร่าง
                   </button>
-                  <button
+                  <Link
+                    href="/properties/new/step2"
                     className="px-8 py-3 rounded-full bg-primary text-on-primary font-label-md shadow-md active:scale-95 transition-all flex items-center gap-2"
-                    type="submit"
                   >
                     ถัดไป
                     <span className="material-symbols-outlined">
                       arrow_forward
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </form>

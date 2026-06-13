@@ -16,7 +16,7 @@
 ### ⏳ Phase 2: Core Data Entry UI (In Progress)
 - [x] **Routing Setup:** Create routes for the property addition flow (`/properties/new`).
 - [x] **Multi-Step Form - Step 1:** General Information & Images UI.
-- [ ] **Multi-Step Form - Step 2:** Qualitative Analysis UI.
+- [x] **Multi-Step Form - Step 2:** Qualitative Analysis UI.
 - [ ] **Multi-Step Form - Step 3:** Quantitative Analysis UI.
 - [ ] **Multi-Step Form - Step 4:** Summary & Results UI (Scorecard).
 
