@@ -6,15 +6,34 @@ import { NavigationDrawer } from "@/components/layout/NavigationDrawer";
 
 
 export default function NewPropertyStep3Page() {
-  const [rent, setRent] = useState<number>(0);
-  const [otherIncome, setOtherIncome] = useState<number>(0);
-  const [maintenance, setMaintenance] = useState<number>(0);
-  const [capRate, setCapRate] = useState<number>(0);
+  const [rent, setRent] = useState<string>('');
+  const [otherIncome, setOtherIncome] = useState<string>('');
+  const [maintenance, setMaintenance] = useState<string>('');
+  const [capRate, setCapRate] = useState<string>('');
 
-  const annualIncome = (rent + otherIncome) * 12;
-  const annualExpenses = maintenance * 12;
+const handleNumberInput = (setter: (val: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    let rawValue = e.target.value.replace(/[^0-9.]/g, '');
+    let parts = rawValue.split('.');
+    if (parts.length > 2) {
+      parts = [parts[0], parts.slice(1).join('')];
+    }
+    if (parts[0]) {
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    setter(parts.join('.'));
+  };
+
+  const parseValue = (val: string) => Number(val.replace(/,/g, '')) || 0;
+
+  const rentNum = parseValue(rent);
+  const otherIncomeNum = parseValue(otherIncome);
+  const maintenanceNum = parseValue(maintenance);
+  const capRateNum = parseValue(capRate);
+
+  const annualIncome = (rentNum + otherIncomeNum) * 12;
+  const annualExpenses = maintenanceNum * 12;
   const noi = annualIncome - annualExpenses;
-  const targetPrice = capRate > 0 ? noi / (capRate / 100) : 0;
+  const targetPrice = capRateNum > 0 ? noi / (capRateNum / 100) : 0;
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('th-TH', {
@@ -76,9 +95,9 @@ export default function NewPropertyStep3Page() {
                         className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                         inputMode="numeric"
                         placeholder="0.00"
-                        type="number"
-                        value={rent || ''}
-                        onChange={(e) => setRent(Number(e.target.value) || 0)}
+                        type="text"
+                        value={rent}
+                        onChange={handleNumberInput(setRent)}
                       />
                       <span className="absolute right-4 top-3 text-secondary">
                         บาท/เดือน
@@ -94,9 +113,9 @@ export default function NewPropertyStep3Page() {
                         className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                         inputMode="numeric"
                         placeholder="0.00"
-                        type="number"
-                        value={otherIncome || ''}
-                        onChange={(e) => setOtherIncome(Number(e.target.value) || 0)}
+                        type="text"
+                        value={otherIncome}
+                        onChange={handleNumberInput(setOtherIncome)}
                       />
                       <span className="absolute right-4 top-3 text-secondary">
                         บาท/เดือน
@@ -122,9 +141,9 @@ export default function NewPropertyStep3Page() {
                         className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                         inputMode="numeric"
                         placeholder="0.00"
-                        type="number"
-                        value={maintenance || ''}
-                        onChange={(e) => setMaintenance(Number(e.target.value) || 0)}
+                        type="text"
+                        value={maintenance}
+                        onChange={handleNumberInput(setMaintenance)}
                       />
                       <span className="absolute right-4 top-3 text-secondary">
                         บาท/เดือน
@@ -172,9 +191,9 @@ export default function NewPropertyStep3Page() {
                       inputMode="decimal"
                       placeholder="0.00"
                       step="0.1"
-                      type="number"
-                      value={capRate || ''}
-                      onChange={(e) => setCapRate(Number(e.target.value) || 0)}
+                      type="text"
+                      value={capRate}
+                      onChange={handleNumberInput(setCapRate)}
                     />
                     <span className="absolute right-4 top-3 text-secondary">%</span>
                   </div>
