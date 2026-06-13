@@ -1,64 +1,17 @@
 import Link from "next/link";
+import { TopAppBar } from "@/components/layout/TopAppBar";
+import { NavigationDrawer } from "@/components/layout/NavigationDrawer";
 
 export default function NewPropertyStep3Page() {
   return (
     <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="bg-surface w-full top-0 sticky border-b border-outline-variant flex justify-between items-center px-margin-mobile h-16 z-40">
-        <div className="flex items-center gap-4">
-          <button
-            className="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full"
-            type="button"
-          >
-            menu
-          </button>
-          <h1 className="font-headline-md text-headline-md font-semibold text-primary">
-            ROI Matrix
-          </h1>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="font-label-md text-secondary">
-            ขั้นตอนที่ 3 จาก 4
-          </span>
-        </div>
-      </header>
+      <TopAppBar />
 
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <aside className="hidden md:flex flex-col gap-stack-md p-margin-desktop h-full w-80 bg-surface border-r border-outline-variant">
-          <div className="mb-4">
-            <h2 className="font-headline-md text-primary">
-              เครื่องมือประเมินผล
-            </h2>
-          </div>
-          <nav className="flex flex-col gap-2">
-            <Link
-              href="/properties/new"
-              className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant transition-all rounded-lg cursor-pointer"
-            >
-              <span className="material-symbols-outlined">info</span>
-              <span className="font-body-md">ข้อมูลทั่วไป</span>
-            </Link>
-            <Link
-              href="/properties/new/step2"
-              className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant transition-all rounded-lg cursor-pointer"
-            >
-              <span className="material-symbols-outlined">psychology</span>
-              <span className="font-body-md">วิเคราะห์เชิงคุณภาพ</span>
-            </Link>
-            <div className="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container font-bold rounded-lg cursor-default">
-              <span className="material-symbols-outlined">calculate</span>
-              <span className="font-body-md">วิเคราะห์เชิงปริมาณ</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant transition-all rounded-lg cursor-pointer opacity-50 cursor-not-allowed">
-              <span className="material-symbols-outlined">description</span>
-              <span className="font-body-md">สรุปผล</span>
-            </div>
-          </nav>
-        </aside>
+      <main className="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full">
+        <NavigationDrawer />
 
         {/* Main Content */}
-        <main className="flex-1 overflow-y-auto bg-background p-margin-mobile md:p-margin-desktop pb-32">
+        <section className="flex-grow p-margin-mobile md:p-margin-desktop overflow-y-auto pb-32 md:pb-8">
           <div className="max-w-4xl mx-auto">
             {/* Progress */}
             <div className="mb-stack-lg">
@@ -229,11 +182,9 @@ export default function NewPropertyStep3Page() {
               </button>
             </div>
           </div>
-        </main>
-      </div>
 
       {/* Sticky Action Bar */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-surface-container-lowest border-t border-outline-variant p-4 md:px-margin-desktop z-50">
+      <footer className="mt-8 bg-surface-container-lowest border-t border-outline-variant p-4 z-50">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           <Link
             href="/properties/new/step2"
@@ -251,6 +202,8 @@ export default function NewPropertyStep3Page() {
           </button>
         </div>
       </footer>
+      </section>
+      </main>
     </div>
   );
 }
