@@ -26,13 +26,14 @@ The application revolves around a "Property" (ทรัพย์สิน) entit
 
 ### B. Qualitative Analysis (การวิเคราะห์เชิงคุณภาพ)
 - **Job Sources (แหล่งงาน):** Proximity to employment hubs.
-- **Amenities (แหล่งอำนวยความสะดวก):** Nearby hospitals, schools, malls, transport.
-- **Target Tenants (ลักษณะของผู้เช่าที่เรามุ่งหวัง):** Who are the likely renters in this area?
-- **Demand (ความต้องการ):** Is there high rental demand?
-- **Pros & Cons (ข้อดีข้อเสีย)**
-- **Required Improvements (สิ่งที่ต้องปรับปรุงก่อนปล่อยเช่า)**
-- **Opportunities & Threats (โอกาสและอุปสรรคในพื้นที่)**
-- **Income/Expense Opportunities (โอกาสในการสร้างรายได้เพิ่ม-ลดรายจ่าย)**
+- **Amenities (สิ่งอำนวยความสะดวก):** Nearby neighborhood facilities (supermarkets, transport, etc).
+- **Tenant Needs (ความต้องการของผู้เช่า):** Specific upgrades or amenities the tenant requires (e.g., Internet, AC).
+- **Target Tenants (ลักษณะของผู้เช่า):** Who are the likely renters in this area?
+- **Pros & Cons (ข้อดี/ข้อเสีย):** Key strengths and main concerns/risks.
+- **Future Outlook & Opportunities (แนวโน้มและโอกาสในอนาคต):**
+  - **Income/Expense Opportunities (โอกาสในการสร้างรายได้เพิ่ม/ลดรายจ่าย)**
+  - **Opportunities & Threats (โอกาสและอุปสรรคของพื้นที่ในอนาคต)**
+- **Required Improvements (สิ่งที่ต้องปรับปรุงก่อนเช่า):** Necessary renovations or upgrades for maximum ROI.
 
 ### C. Quantitative Analysis (การวิเคราะห์เชิงปริมาณ)
 - **Income Summary (สรุปรายรับ):** Expected rent, parking fees, etc.
