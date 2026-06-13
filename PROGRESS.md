@@ -17,7 +17,7 @@
 - [x] **Routing Setup:** Create routes for the property addition flow (`/properties/new`).
 - [x] **Multi-Step Form - Step 1:** General Information & Images UI.
 - [x] **Multi-Step Form - Step 2:** Qualitative Analysis UI.
-- [x] **Multi-Step Form - Step 3:** Quantitative Analysis UI.
+- [x] **Multi-Step Form - Step 3:** Quantitative Analysis UI (Completed with real-time dynamic calculations and number auto-formatting).
 - [x] **Desktop Layout Standardization:** Fixed responsive layouts, sidebar width, and step header consistency. Created `docs/stitch_desktop_layout_guidelines.md` for AI agent alignment.
 - [ ] **Multi-Step Form - Step 4:** Summary & Results UI (Scorecard).
 
