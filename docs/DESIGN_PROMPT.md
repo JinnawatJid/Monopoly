@@ -45,9 +45,11 @@ When the user clicks "Add New Property", they should enter a multi-step wizard. 
 #### Step 3: Quantitative Analysis (การวิเคราะห์เชิงปริมาณ)
 *Note: Make number inputs easy to use on mobile (e.g., using `type="number"` or numeric keypads).*
 - **Income (รายรับ):** Estimated monthly rent, other income.
-- **Expenses (รายจ่าย):** Maintenance, property tax, common area fees.
-- **Purchasing Fees (ค่าธรรมเนียมการซื้อ):** Transfer fees, etc.
-- **Financing (การจัดหาเงินทุน):** Loan Amount, Interest Rate (%), Loan Term (Years).
+- **Expenses (รายจ่าย):** Common area/Management fees.
+- **Purchase Price Estimation (ประเมินราคาซื้อ):**
+  - Read-only Auto-calculated fields: Total Annual Income, Total Annual Expenses, Net Operating Income (NOI).
+  - Input field: Target Yield/Cap Rate (%) (อัตราผลตอบแทนที่ต้องการ).
+  - Main Output display: Target Purchasing Price (ราคาเสนอซื้อ).
 
 #### Step 4: Summary & Results (สรุปผลการลงทุน)
 - **Purpose:** Display the calculated results based on the inputs from Step 3. (You can use placeholder calculation logic for now).
