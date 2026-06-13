@@ -264,13 +264,13 @@ export default function AddPropertyStep2() {
               >
                 บันทึกร่าง
               </button>
-              <button
+              <Link
+                href="/properties/new/step3"
                 className="flex items-center gap-2 px-8 py-3 bg-primary text-on-primary font-label-md rounded-lg shadow-sm hover:bg-primary-container transition-all active:scale-95 duration-200"
-                type="button"
               >
                 ขั้นตอนถัดไป
                 <span className="material-symbols-outlined">arrow_forward</span>
-              </button>
+              </Link>
             </div>
           </div>
         </section>

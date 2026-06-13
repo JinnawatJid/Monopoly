@@ -17,7 +17,7 @@
 - [x] **Routing Setup:** Create routes for the property addition flow (`/properties/new`).
 - [x] **Multi-Step Form - Step 1:** General Information & Images UI.
 - [x] **Multi-Step Form - Step 2:** Qualitative Analysis UI.
-- [ ] **Multi-Step Form - Step 3:** Quantitative Analysis UI.
+- [x] **Multi-Step Form - Step 3:** Quantitative Analysis UI.
 - [ ] **Multi-Step Form - Step 4:** Summary & Results UI (Scorecard).
 
 ### ⏳ Phase 3: Backend Integration (Supabase)

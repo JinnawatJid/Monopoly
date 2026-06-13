@@ -1,0 +1,256 @@
+import Link from "next/link";
+
+export default function NewPropertyStep3Page() {
+  return (
+    <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="bg-surface w-full top-0 sticky border-b border-outline-variant flex justify-between items-center px-margin-mobile h-16 z-40">
+        <div className="flex items-center gap-4">
+          <button
+            className="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full"
+            type="button"
+          >
+            menu
+          </button>
+          <h1 className="font-headline-md text-headline-md font-semibold text-primary">
+            ROI Matrix
+          </h1>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="font-label-md text-secondary">
+            ขั้นตอนที่ 3 จาก 4
+          </span>
+        </div>
+      </header>
+
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar */}
+        <aside className="hidden md:flex flex-col gap-stack-md p-margin-desktop h-full w-80 bg-surface border-r border-outline-variant">
+          <div className="mb-4">
+            <h2 className="font-headline-md text-primary">
+              เครื่องมือประเมินผล
+            </h2>
+          </div>
+          <nav className="flex flex-col gap-2">
+            <Link
+              href="/properties/new"
+              className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant transition-all rounded-lg cursor-pointer"
+            >
+              <span className="material-symbols-outlined">info</span>
+              <span className="font-body-md">ข้อมูลทั่วไป</span>
+            </Link>
+            <Link
+              href="/properties/new/step2"
+              className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant transition-all rounded-lg cursor-pointer"
+            >
+              <span className="material-symbols-outlined">psychology</span>
+              <span className="font-body-md">วิเคราะห์เชิงคุณภาพ</span>
+            </Link>
+            <div className="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container font-bold rounded-lg cursor-default">
+              <span className="material-symbols-outlined">calculate</span>
+              <span className="font-body-md">วิเคราะห์เชิงปริมาณ</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant transition-all rounded-lg cursor-pointer opacity-50 cursor-not-allowed">
+              <span className="material-symbols-outlined">description</span>
+              <span className="font-body-md">สรุปผล</span>
+            </div>
+          </nav>
+        </aside>
+
+        {/* Main Content */}
+        <main className="flex-1 overflow-y-auto bg-background p-margin-mobile md:p-margin-desktop pb-32">
+          <div className="max-w-4xl mx-auto">
+            {/* Progress */}
+            <div className="mb-stack-lg">
+              <div className="flex items-center justify-between mb-2">
+                <h2 className="font-headline-lg-mobile md:font-headline-lg text-on-surface">
+                  การวิเคราะห์เชิงปริมาณ
+                </h2>
+                <span className="text-primary font-bold">ดำเนินการแล้ว 75%</span>
+              </div>
+              <div className="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-primary transition-all duration-500"
+                  style={{ width: "75%" }}
+                ></div>
+              </div>
+              <p className="font-body-sm text-secondary mt-2">
+                กรุณาระบุข้อมูลทางการเงินเพื่อคำนวณราคาเสนอซื้อที่เหมาะสม
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-stack-md">
+              {/* Section: Income */}
+              <section className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4">
+                <div className="flex items-center gap-2 text-primary">
+                  <span className="material-symbols-outlined">payments</span>
+                  <h3 className="font-headline-md">รายรับ (Income)</h3>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">
+                      ค่าเช่าโดยประมาณ
+                    </label>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="number"
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">
+                        บาท/เดือน
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">
+                      รายได้อื่นๆ
+                    </label>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="number"
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">
+                        บาท/เดือน
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Section: Expenses */}
+              <section className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4">
+                <div className="flex items-center gap-2 text-primary">
+                  <span className="material-symbols-outlined">receipt_long</span>
+                  <h3 className="font-headline-md">รายจ่าย (Expenses)</h3>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">
+                      ค่าส่วนกลาง / ค่าบริหารจัดการ
+                    </label>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="number"
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">
+                        บาท/เดือน
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Section: Purchase Price Estimation (New) */}
+              <section className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4 lg:col-span-2">
+                <div className="flex items-center gap-2 text-primary">
+                  <span className="material-symbols-outlined">analytics</span>
+                  <h3 className="font-headline-md">
+                    ประเมินราคาซื้อ (Purchase Price Estimation)
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-surface-container rounded-lg p-4">
+                    <span className="font-label-sm text-secondary">
+                      รายรับรวมต่อปี
+                    </span>
+                    <div className="text-lg font-bold text-on-surface">฿ 0.00</div>
+                  </div>
+                  <div className="bg-surface-container rounded-lg p-4">
+                    <span className="font-label-sm text-secondary">
+                      รายจ่ายรวมต่อปี
+                    </span>
+                    <div className="text-lg font-bold text-on-surface">฿ 0.00</div>
+                  </div>
+                  <div className="bg-surface-container rounded-lg p-4">
+                    <span className="font-label-sm text-secondary text-primary">
+                      รายได้จากการดำเนินงานต่อปี (NOI)
+                    </span>
+                    <div className="text-lg font-bold text-primary">฿ 0.00</div>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-outline-variant">
+                  <label className="block font-label-md text-on-surface mb-1">
+                    อัตราผลตอบแทนที่ต้องการ (%)
+                  </label>
+                  <div className="relative max-w-xs">
+                    <input
+                      className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                      inputMode="decimal"
+                      placeholder="0.00"
+                      step="0.1"
+                      type="number"
+                    />
+                    <span className="absolute right-4 top-3 text-secondary">%</span>
+                  </div>
+                </div>
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mt-2 flex flex-col items-center justify-center gap-2">
+                  <span className="font-label-md text-primary">
+                    ราคาเสนอซื้อที่แนะนำ (Target Purchasing Price)
+                  </span>
+                  <div className="text-4xl font-bold text-primary">฿ 0.00</div>
+                </div>
+              </section>
+            </div>
+
+            {/* Strategic Summary Bento Card */}
+            <div className="mt-stack-lg p-6 bg-primary text-on-primary rounded-xl flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="text-center md:text-left">
+                <p className="font-label-md opacity-90">
+                  รายได้จากการดำเนินงานต่อปี (NOI)
+                </p>
+                <h4 className="font-headline-lg-mobile md:font-headline-lg">
+                  ฿ 0.00
+                </h4>
+              </div>
+              <div className="h-px md:h-12 w-full md:w-px bg-on-primary/20"></div>
+              <div className="text-center md:text-left">
+                <p className="font-label-md opacity-90">ราคาเสนอซื้อ</p>
+                <h4 className="font-headline-lg-mobile md:font-headline-lg">
+                  ฿ 0.00
+                </h4>
+              </div>
+              <div className="h-px md:h-12 w-full md:w-px bg-on-primary/20"></div>
+              <button
+                className="bg-on-primary text-primary px-8 py-3 rounded-full font-label-md shadow-lg hover:bg-on-primary/90 transition-all flex items-center gap-2"
+                type="button"
+              >
+                <span>คำนวณใหม่</span>
+                <span className="material-symbols-outlined text-[18px]">
+                  refresh
+                </span>
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      {/* Sticky Action Bar */}
+      <footer className="fixed bottom-0 left-0 right-0 bg-surface-container-lowest border-t border-outline-variant p-4 md:px-margin-desktop z-50">
+        <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
+          <Link
+            href="/properties/new/step2"
+            className="flex-1 md:flex-none md:w-40 h-12 rounded-full border border-secondary text-secondary font-label-md flex items-center justify-center gap-2 hover:bg-secondary/5 transition-colors"
+          >
+            <span className="material-symbols-outlined">arrow_back</span>
+            <span>ย้อนกลับ</span>
+          </Link>
+          <button
+            className="flex-[2] md:flex-none md:w-64 h-12 rounded-full bg-primary text-on-primary font-label-md flex items-center justify-center gap-2 shadow-md active:scale-95 transition-transform"
+            type="button"
+          >
+            <span>คำนวณและไปต่อ</span>
+            <span className="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </footer>
+    </div>
+  );
+}
