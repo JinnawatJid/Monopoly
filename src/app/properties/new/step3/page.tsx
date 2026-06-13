@@ -7,21 +7,28 @@ export default function NewPropertyStep3Page() {
     <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
       <TopAppBar />
 
-      <main className="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full">
+      <main className="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full md:gap-stack-lg">
         <NavigationDrawer />
 
         {/* Main Content */}
-        <section className="flex-grow p-margin-mobile md:p-margin-desktop overflow-y-auto pb-32 md:pb-8">
-          <div className="max-w-4xl mx-auto">
-            {/* Progress */}
-            <div className="mb-stack-lg">
-              <div className="flex items-center justify-between mb-2">
-                <h2 className="font-headline-lg-mobile md:font-headline-lg text-on-surface">
-                  การวิเคราะห์เชิงปริมาณ
-                </h2>
-                <span className="text-primary font-bold">ดำเนินการแล้ว 75%</span>
+        <div className="flex-grow p-margin-mobile md:p-margin-desktop max-w-4xl pb-32 md:pb-margin-desktop">
+          <div>
+            {/* Progress Header */}
+            <div className="mb-6">
+              <div className="flex justify-between items-end mb-2">
+                <div>
+                  <span className="text-primary font-label-md uppercase tracking-wider">
+                    Quantitative Analysis
+                  </span>
+                  <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">
+                    วิเคราะห์เชิงปริมาณ
+                  </h2>
+                </div>
+                <span className="font-label-md text-primary">
+                  ขั้นตอนที่ 3 จาก 4
+                </span>
               </div>
-              <div className="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-surface-container rounded-full overflow-hidden">
                 <div
                   className="h-full bg-primary transition-all duration-500"
                   style={{ width: "75%" }}
@@ -184,7 +191,7 @@ export default function NewPropertyStep3Page() {
           </div>
 
       {/* Sticky Action Bar */}
-      <footer className="mt-8 bg-surface-container-lowest border-t border-outline-variant p-4 z-50">
+      <footer className="mt-8 bg-surface-container-lowest border-t border-outline-variant p-4 z-50 rounded-xl">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           <Link
             href="/properties/new/step2"
@@ -202,7 +209,7 @@ export default function NewPropertyStep3Page() {
           </button>
         </div>
       </footer>
-      </section>
+      </div>
       </main>
     </div>
   );

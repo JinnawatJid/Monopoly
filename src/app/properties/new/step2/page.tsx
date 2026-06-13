@@ -8,29 +8,29 @@ export default function AddPropertyStep2() {
     <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
       <TopAppBar />
 
-      <main className="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full">
+      <main className="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full md:gap-stack-lg">
         <NavigationDrawer />
 
         {/* Main Content Area */}
-        <section className="flex-grow p-margin-mobile md:p-margin-desktop overflow-y-auto pb-24 md:pb-8">
+        <div className="flex-grow p-margin-mobile md:p-margin-desktop max-w-4xl pb-32 md:pb-margin-desktop">
           {/* Progress Indicator */}
-          <div className="mb-stack-lg">
+          <div className="mb-6">
             <div className="flex justify-between items-end mb-2">
               <div>
-                <p className="text-primary font-label-md uppercase tracking-wider">
-                  ขั้นตอนที่ 2 จาก 4
-                </p>
-                <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mt-1">
-                  การวิเคราะห์เชิงคุณภาพ (Qualitative Analysis)
+                <span className="text-primary font-label-md uppercase tracking-wider">
+                  Qualitative Analysis
+                </span>
+                <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">
+                  วิเคราะห์เชิงคุณภาพ
                 </h2>
               </div>
-              <span className="hidden md:block font-label-sm text-on-surface-variant">
-                เสร็จสิ้น 50%
+              <span className="font-label-md text-primary">
+                ขั้นตอนที่ 2 จาก 4
               </span>
             </div>
-            <div className="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-surface-container rounded-full overflow-hidden">
               <div
-                className="h-full bg-primary-container step-active transition-all duration-500"
+                className="h-full bg-primary transition-all duration-500"
                 style={{ width: "50%" }}
               ></div>
             </div>
@@ -273,7 +273,7 @@ export default function AddPropertyStep2() {
               </Link>
             </div>
           </div>
-        </section>
+        </div>
       </main>
 
       <BottomNavBar />

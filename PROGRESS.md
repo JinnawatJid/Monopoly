@@ -18,6 +18,7 @@
 - [x] **Multi-Step Form - Step 1:** General Information & Images UI.
 - [x] **Multi-Step Form - Step 2:** Qualitative Analysis UI.
 - [x] **Multi-Step Form - Step 3:** Quantitative Analysis UI.
+- [x] **Desktop Layout Standardization:** Fixed responsive layouts, sidebar width, and step header consistency. Created `docs/stitch_desktop_layout_guidelines.md` for AI agent alignment.
 - [ ] **Multi-Step Form - Step 4:** Summary & Results UI (Scorecard).
 
 ### ⏳ Phase 3: Backend Integration (Supabase)
