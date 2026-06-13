@@ -36,11 +36,12 @@ The application revolves around a "Property" (ทรัพย์สิน) entit
 - **Required Improvements (สิ่งที่ต้องปรับปรุงก่อนเช่า):** Necessary renovations or upgrades for maximum ROI.
 
 ### C. Quantitative Analysis (การวิเคราะห์เชิงปริมาณ)
-- **Income Summary (สรุปรายรับ):** Expected rent, parking fees, etc.
-- **Expense Summary (สรุปรายจ่าย):** Maintenance, taxes, management fees, vacancy allowance.
-- **Valuation (ประเมินราคาซื้อ)**
-- **Purchasing Fees (ค่าธรรมเนียมการซื้อ):** Transfer fees, taxes.
-- **Financing (เงินลงทุน/เงินกู้):** Loan amount, interest rate, term, monthly installment.
+- **Income Summary (สรุปรายรับ):** Expected rent, other income.
+- **Expense Summary (สรุปรายจ่าย):** Management fees.
+- **Valuation (ประเมินราคาซื้อ):**
+  - **Auto-Calculated Fields:** Total Annual Income, Total Annual Expenses, Net Operating Income (NOI).
+  - **Manual Input:** Target Yield/Cap Rate (อัตราผลตอบแทนที่ต้องการ).
+  - **Calculated Output:** Target Purchasing Price (ราคาเสนอซื้อ).
 - **Returns (อัตราผลตอบแทน):**
   - **Monthly Cash Flow (กระแสเงินสดต่อเดือน):** Net Operating Income - Mortgage Payment.
   - **Cash-on-Cash Return (CCR):** (Annual Cash Flow / Total Initial Investment) * 100.
