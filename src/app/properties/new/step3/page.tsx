@@ -12,7 +12,7 @@ export default function NewPropertyStep3Page() {
   const [capRate, setCapRate] = useState<string>('');
 
 const handleNumberInput = (setter: (val: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    let rawValue = e.target.value.replace(/[^0-9.]/g, '');
+    const rawValue = e.target.value.replace(/[^0-9.]/g, '');
     let parts = rawValue.split('.');
     if (parts.length > 2) {
       parts = [parts[0], parts.slice(1).join('')];

@@ -348,8 +348,8 @@ export default function Home() {
       {/* BottomNavBar */}
       <nav className="pb-safe fixed bottom-0 z-50 flex h-20 w-full items-center justify-around rounded-t-[2rem] border-t border-outline-variant bg-surface-container-lowest px-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
         {/* Active Tab: Dashboard */}
-        <a
-          href="#"
+        <button
+          type="button"
           className="flex flex-col items-center justify-center rounded-full bg-primary-container px-4 py-1 text-on-primary-container transition-transform duration-200 active:scale-90"
         >
           <span
@@ -360,25 +360,25 @@ export default function Home() {
             dashboard
           </span>
           <span className="font-label-sm text-label-sm">หน้าหลัก</span>
-        </a>
-        <a
-          href="#"
+        </button>
+        <button
+          type="button"
           className="flex flex-col items-center justify-center px-4 py-1 text-secondary transition-transform duration-200 hover:text-primary active:scale-90"
         >
           <span className="material-symbols-outlined" data-icon="analytics">
             analytics
           </span>
           <span className="font-label-sm text-label-sm">วิเคราะห์ข้อมูล</span>
-        </a>
-        <a
-          href="#"
+        </button>
+        <button
+          type="button"
           className="flex flex-col items-center justify-center px-4 py-1 text-secondary transition-transform duration-200 hover:text-primary active:scale-90"
         >
           <span className="material-symbols-outlined" data-icon="settings">
             settings
           </span>
           <span className="font-label-sm text-label-sm">ตั้งค่า</span>
-        </a>
+        </button>
       </nav>
     </>
   );
