@@ -104,7 +104,7 @@ export default function AddPropertyStep2() {
               <div className="flex-grow space-y-stack-md">
                 <div>
                   <label className="block font-label-md text-on-surface-variant mb-2">
-                    ความต้องการของผู้เช่า (Tenant Needs/Upgrades)
+                    ความต้องการของผู้เช่า
                   </label>
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-label-sm flex items-center gap-1">
@@ -134,7 +134,7 @@ export default function AddPropertyStep2() {
                 </div>
                 <div>
                   <label className="block font-label-md text-on-surface-variant mb-2">
-                    ลักษณะของผู้เช่า (Target Tenants)
+                    ลักษณะของผู้เช่า
                   </label>
                   <textarea
                     className="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-body-md min-h-[100px] focus:outline-none focus:border-tertiary focus:ring-2 focus:ring-tertiary/20 transition-all"
