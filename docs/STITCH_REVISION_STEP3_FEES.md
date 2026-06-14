@@ -1,5 +1,9 @@
 # Revision Prompt for Stitch - Property Evaluation Step 3 (Trading/Transfer Fees Addition)
 
+> **STATUS: FULFILLED**
+> This prompt was executed and the resulting HTML has been integrated into `src/app/properties/new/step3/page.tsx` with full React state management and automatic calculations.
+
+
 You are updating the "Step 3: Quantitative Analysis" screen of the ROI Matrix Property Evaluation Wizard to add a new section for **"Trading/Transfer Fees" (ค่าธรรมเนียมการซื้อขาย)**.
 
 Please revise the current HTML/Tailwind design based on the following instructions:
