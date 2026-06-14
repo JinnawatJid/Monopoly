@@ -13,20 +13,24 @@ Please revise the current HTML/Tailwind design based on the following instructio
 ## 3. New Section: "ค่าธรรมเนียมการซื้อขาย" (Trading/Transfer Fees)
 This section should be visually distinct (e.g., wrapped in a card or a bordered section like other groups) and contain the following elements:
 
-### A. Manual Input Fields
-Add standard text inputs (configured for numeric values with comma formatting) for the following:
+### A. Manual Input Fields with Percentage Badges
+Add standard text inputs (configured for numeric values with comma formatting) for the following fields. For fields with fixed statutory percentages, **display the percentage alongside the input field or label** (e.g., as a distinct badge, secondary text, or inside a right-aligned input addon, matching standard UI layouts for showing rates next to fields):
+
 - **ราคาซื้อขาย** (Property Trading/Selling Value)
 - **ราคาประเมิน** (Appraisal Value)
 - **วงเงินกู้** (Loan Amount)
 - **ค่าประเมิน** (Appraisal Fee)
+- **ค่าธรรมเนียมการโอน 2%** (Transfer Fee) - *Display "2%" prominently next to the label or field.*
+- **ค่าจดจำนอง 1%** (Mortgage Registration Fee) - *Display "1%" prominently next to the label or field.*
 - **ภาษีเงินได้หัก ณ ที่จ่าย** (Withholding Tax)
+  - *Crucial Addition:* Add an external link icon or button alongside this field linking to the official calculator: `https://rdsrv2.rd.go.th/landwht/formcal1.asp`. The link should open in a new tab (`target="_blank"`).
 
 ### B. Tax Type Toggle (Specific Business Tax vs. Stamp Duty)
 Users need to choose which tax applies.
 - Create a toggle, segmented control, or radio button group with two options:
-  1. **ภาษีธุรกิจเฉพาะ** (Specific Business Tax)
-  2. **อากรแสตมป์** (Stamp Duty)
-- Only one can be selected at a time. Include a manual input field next to or below this selection for the user to input the actual tax amount.
+  1. **ภาษีธุรกิจเฉพาะ 3.3%** (Specific Business Tax) - *Display "3.3%" prominently next to the label.*
+  2. **อากรแสตมป์ 0.5%** (Stamp Duty) - *Display "0.5%" prominently next to the label.*
+- Only one can be selected at a time. Include a manual input field next to or below this selection for the user to input the actual calculated tax amount.
 
 ### C. Fee Responsibility Split (การแบ่งจ่ายค่าธรรมเนียม)
 Add a mechanism for the user to define who is responsible for paying these fees.
