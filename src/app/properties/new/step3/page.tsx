@@ -11,6 +11,16 @@ export default function NewPropertyStep3Page() {
   const [maintenance, setMaintenance] = useState<string>('');
   const [capRate, setCapRate] = useState<string>('');
 
+  // New State for Trading/Transfer Fees
+  const [tradingPrice, setTradingPrice] = useState<string>('');
+  const [appraisalValue, setAppraisalValue] = useState<string>('');
+  const [loanAmount, setLoanAmount] = useState<string>('');
+  const [appraisalFee, setAppraisalFee] = useState<string>('');
+  const [withholdingTax, setWithholdingTax] = useState<string>('');
+
+  const [taxType, setTaxType] = useState<'sbt' | 'stamp'>('sbt');
+  const [feeSplit, setFeeSplit] = useState<'seller' | 'half' | 'buyer'>('half');
+
 const handleNumberInput = (setter: (val: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value.replace(/[^0-9.]/g, '');
     let parts = rawValue.split('.');
@@ -29,6 +39,21 @@ const handleNumberInput = (setter: (val: string) => void) => (e: React.ChangeEve
   const otherIncomeNum = parseValue(otherIncome);
   const maintenanceNum = parseValue(maintenance);
   const capRateNum = parseValue(capRate);
+
+  // Parse new state values
+  const tradingPriceNum = parseValue(tradingPrice);
+  const appraisalValueNum = parseValue(appraisalValue);
+  const loanAmountNum = parseValue(loanAmount);
+
+  // Calculate specific fees
+  const transferFee = appraisalValueNum * 0.02; // 2% of appraisal value
+  const mortgageFee = loanAmountNum * 0.01; // 1% of loan amount
+
+  // Tax calculation based on the higher of trading price or appraisal value
+  const taxBaseAmount = Math.max(tradingPriceNum, appraisalValueNum);
+  const calculatedTax = taxType === 'sbt'
+    ? taxBaseAmount * 0.033 // Specific Business Tax 3.3%
+    : taxBaseAmount * 0.005; // Stamp Duty 0.5%
 
   const annualIncome = (rentNum + otherIncomeNum) * 12;
   const annualExpenses = maintenanceNum * 12;
@@ -203,6 +228,188 @@ const handleNumberInput = (setter: (val: string) => void) => (e: React.ChangeEve
                     ราคาเสนอซื้อที่แนะนำ
                   </span>
                   <div className="text-4xl font-bold text-primary">{formatCurrency(targetPrice)}</div>
+                </div>
+              </section>
+              {/* Refined Section: Trading/Transfer Fees */}
+              <section className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4 lg:col-span-2">
+                <div className="flex items-center gap-2 text-primary">
+                  <span className="material-symbols-outlined">account_balance_wallet</span>
+                  <h3 className="font-headline-md">ค่าธรรมเนียมการซื้อขาย</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                  {/* Input: Trading Price */}
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">ราคาซื้อขาย</label>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="text"
+                        value={tradingPrice}
+                        onChange={handleNumberInput(setTradingPrice)}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                  {/* Input: Appraised Value */}
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">ราคาประเมิน</label>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="text"
+                        value={appraisalValue}
+                        onChange={handleNumberInput(setAppraisalValue)}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                  {/* Input: Loan Amount */}
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">วงเงินกู้</label>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="text"
+                        value={loanAmount}
+                        onChange={handleNumberInput(setLoanAmount)}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                  {/* Input: Appraisal Fee */}
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">ค่าประเมิน</label>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="text"
+                        value={appraisalFee}
+                        onChange={handleNumberInput(setAppraisalFee)}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                  {/* Transfer Fee (2%) */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="font-label-md text-on-surface">ค่าธรรมเนียมการโอน</label>
+                      <span className="bg-primary/10 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded border border-primary/20">2%</span>
+                    </div>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-container-low"
+                        placeholder="0.00"
+                        readOnly
+                        type="text"
+                        value={formatCurrency(transferFee).replace('฿', '').trim()}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                  {/* Mortgage Fee (1%) */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="font-label-md text-on-surface">ค่าจดจำนอง</label>
+                      <span className="bg-primary/10 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded border border-primary/20">1%</span>
+                    </div>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-container-low"
+                        placeholder="0.00"
+                        readOnly
+                        type="text"
+                        value={formatCurrency(mortgageFee).replace('฿', '').trim()}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                  {/* Withholding Tax */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="font-label-md text-on-surface">ภาษีเงินได้หัก ณ ที่จ่าย</label>
+                      <a className="text-primary flex items-center gap-1 hover:underline" href="https://rdsrv2.rd.go.th/landwht/formcal1.asp" target="_blank" rel="noopener noreferrer">
+                        <span className="text-[10px] font-bold">โปรแกรมคำนวณ</span>
+                        <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                      </a>
+                    </div>
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        inputMode="numeric"
+                        placeholder="0.00"
+                        type="text"
+                        value={withholdingTax}
+                        onChange={handleNumberInput(setWithholdingTax)}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                  {/* Tax Type Selection */}
+                  <div>
+                    <label className="block font-label-md text-on-surface mb-1">ประเภทภาษี</label>
+                    <div className="flex bg-surface-container p-1 rounded-lg mb-2">
+                      <button
+                        type="button"
+                        onClick={() => setTaxType('sbt')}
+                        className={`flex-1 py-2 text-label-sm rounded-md transition-colors ${taxType === 'sbt' ? 'bg-white text-primary shadow-sm font-bold border border-outline-variant' : 'text-secondary hover:bg-surface-variant'}`}
+                      >
+                        ภาษีธุรกิจเฉพาะ 3.3%
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setTaxType('stamp')}
+                        className={`flex-1 py-2 text-label-sm rounded-md transition-colors ${taxType === 'stamp' ? 'bg-white text-primary shadow-sm font-bold border border-outline-variant' : 'text-secondary hover:bg-surface-variant'}`}
+                      >
+                        อากรแสตมป์ 0.5%
+                      </button>
+                    </div>
+                    {/* Calculated Tax Amount display */}
+                    <div className="relative">
+                      <input
+                        className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface-container-low"
+                        placeholder="0.00"
+                        readOnly
+                        type="text"
+                        value={formatCurrency(calculatedTax).replace('฿', '').trim()}
+                      />
+                      <span className="absolute right-4 top-3 text-secondary">บาท</span>
+                    </div>
+                  </div>
+                </div>
+                {/* Fee Responsibility Split */}
+                <div className="pt-4 border-t border-outline-variant">
+                  <label className="block font-label-md text-on-surface mb-2">สัดส่วนการรับผิดชอบค่าธรรมเนียม</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setFeeSplit('seller')}
+                      className={`py-3 rounded-lg text-label-sm transition-colors ${feeSplit === 'seller' ? 'border border-primary bg-primary/5 text-primary font-bold' : 'border border-outline text-secondary hover:bg-surface-variant'}`}
+                    >
+                      ผู้ขายจ่ายทั้งหมด
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setFeeSplit('half')}
+                      className={`py-3 rounded-lg text-label-sm transition-colors ${feeSplit === 'half' ? 'border border-primary bg-primary/5 text-primary font-bold' : 'border border-outline text-secondary hover:bg-surface-variant'}`}
+                    >
+                      คนละครึ่ง
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setFeeSplit('buyer')}
+                      className={`py-3 rounded-lg text-label-sm transition-colors ${feeSplit === 'buyer' ? 'border border-primary bg-primary/5 text-primary font-bold' : 'border border-outline text-secondary hover:bg-surface-variant'}`}
+                    >
+                      ผู้ซื้อจ่ายทั้งหมด
+                    </button>
+                  </div>
                 </div>
               </section>
             </div>
