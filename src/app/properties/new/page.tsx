@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { TopAppBar } from "@/components/layout/TopAppBar";
 import { NavigationDrawer } from "@/components/layout/NavigationDrawer";
 import { BottomNavBar } from "@/components/layout/BottomNavBar";
@@ -211,10 +212,9 @@ export default function AddPropertyStep1() {
                   </div>
                   {/* Thumbnail Preview 1 */}
                   <div className="relative aspect-square rounded-xl overflow-hidden border border-outline-variant group">
-                    {/* Using standard img for mockup to match Stitch's HTML, would switch to next/image in production with proper domains */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      className="w-full h-full object-cover"
+                    <Image
+                      fill
+                      className="object-cover"
                       alt="Modern apartment interior"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsbUyesV43P-CG_4Nk7pojZwCuh40ZWPYyzLQJNiyf1j9Mi6-AVzs9zXAyV7Wtk666Rhhn8Vn4ElR1TECdcCFtBnZhpLpObyIFCvXPESHypmXOo7btTjpVZjje_VTFxnrgGiFDD1WXNfg_sffxhQ73FkZgw-FGESNUF-w7EjxawYbOv0fbX5dNgXBSXSPs4qWJbkAGgNsEVEpJUSUXuNWcNecUnPo2l4iBRC4phSS_XLD1q2yMWSL2tSpX-flTB3ybQ_ewg_xNWk-0"
                     />
@@ -229,9 +229,9 @@ export default function AddPropertyStep1() {
                   </div>
                   {/* Thumbnail Preview 2 */}
                   <div className="relative aspect-square rounded-xl overflow-hidden border border-outline-variant group">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      className="w-full h-full object-cover"
+                    <Image
+                      fill
+                      className="object-cover"
                       alt="Kitchen detail"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpxIrNOTpAqeOgcLclUajo184iZaL-gWliPhwqcNJ1T2xH271baqCOQXrcozx2mL0DsRcfUlxfzBZJ_qtdjmfc_qZRSoO-tlu3M6qIhnB76Q8eWpQQLXyiB0PS0yERhmeYQLvXa_EdHYh3jlOudCCkuYRrMpDoDrsjcgfySTP44-VjjCZ64n0QMJ6uaVVtl4LsvfASpTX0Uwa1aUcrBwRy79yBl-V3W1NFvT68qALFw7TsYIXXAZDJuXwYPdAO3YnOb0fWeY0G2yxC"
                     />
